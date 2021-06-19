@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EditItemActivity">
+
+	<EditText
+		android:id="@+id/editItemName"
+		android:layout_width="332dp"
+		android:layout_height="45dp"
+		android:layout_marginStart="40dp"
+		android:layout_marginTop="40dp"
+		android:layout_marginEnd="40dp"
+		android:ems="10"
+		android:hint="Item Name"
+		android:inputType="text|textCapWords"
+		android:nextFocusDown="@id/editQuantity_edit"
+		android:textSize="24sp"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintHorizontal_bias="0.493"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toTopOf="parent" />
+
+	<EditText
+		android:id="@+id/editQuantity_edit"
+		android:layout_width="60dp"
+		android:layout_height="40dp"
+		android:layout_marginStart="12dp"
+		android:layout_marginTop="4dp"
+		android:ems="10"
+		android:inputType="numberSigned"
+		android:nextFocusUp="@id/editItemName"
+		android:nextFocusDown="@id/saveItem"
+		app:layout_constraintStart_toEndOf="@+id/decreaseQuantityBtn_edit"
+		app:layout_constraintTop_toTopOf="@+id/decreaseQuantityBtn_edit" />
+
+	<ImageButton
+		android:id="@+id/decreaseQuantityBtn_edit"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
+		android:layout_marginStart="75dp"
+		android:layout_marginTop="40dp"
+		android:background="@color/purple_500"
+		android:onClick="decrementQuantity"
+		android:src="@drawable/ic_remove"
+		android:textAlignment="center"
+		app:layout_constraintStart_toEndOf="@+id/textView"
+		app:layout_constraintTop_toBottomOf="@+id/editItemName"
+		app:tint="@color/white"
+		tools:src="@drawable/ic_remove" />
+
+	<ImageButton
+		android:id="@+id/increaseQuantityBtn_edit"
+		android:layout_width="40dp"
+		android:layout_height="40dp"
+		android:layout_marginStart="12dp"
+		android:background="@color/purple_500"
+		android:onClick="incrementQuantity"
+		android:src="@drawable/ic_add"
+		android:textAlignment="center"
+		app:layout_constraintStart_toEndOf="@+id/editQuantity_edit"
+		app:layout_constraintTop_toTopOf="@+id/decreaseQuantityBtn_edit"
+		app:tint="@color/white"
+		tools:src="@drawable/ic_add" />
+
+	<Button
+		android:id="@+id/saveItem"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="35dp"
+		android:background="@color/success"
+		android:nextFocusUp="@id/editQuantity_edit"
+		android:onClick="handleSaveItem"
+		android:text="@string/save_item"
+		app:backgroundTint="@color/success"
+		app:layout_constraintEnd_toEndOf="@+id/increaseQuantityBtn_edit"
+		app:layout_constraintTop_toBottomOf="@+id/increaseQuantityBtn_edit" />
+
+	<TextView
+		android:id="@+id/textView"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginStart="44dp"
+		android:layout_marginTop="48dp"
+		android:text="@string/quantity"
+		android:textSize="18sp"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/editItemName" />
+
+	<Button
+		android:id="@+id/deleteItemBtn"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="40dp"
+		android:background="@color/danger"
+		android:onClick="handleDeleteItem"
+		android:text="Delete Item"
+		app:backgroundTint="@color/danger"
+		app:icon="@drawable/trashcan"
+		app:layout_constraintEnd_toEndOf="@+id/saveItem"
+		app:layout_constraintTop_toBottomOf="@+id/saveItem" />
+</androidx.constraintlayout.widget.ConstraintLayout>

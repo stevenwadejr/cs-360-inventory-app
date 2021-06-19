@@ -1,0 +1,25 @@
+<resources>
+	<string name="app_name">InventoryApp</string>
+	<string name="app_name_presentation">Inventory Management</string>
+	<string name="login_text">username</string>
+	<string name="password_text">password</string>
+	<string name="login_btn_text">Login</string>
+	<string name="logout_text">Logout</string>
+	<string name="register_btn_text">Register</string>
+	<string name="add_item">Add Item</string>
+	<string name="edit_item">Edit Item</string>
+	<string name="remove_item">Remove Item</string>
+	<string name="save_item">Save Item</string>
+	<string name="manage_notifications">Manage Notifications</string>
+	<string name="receive_notifications">Receive Notifications</string>
+	<string name="quantity">Quantity</string>
+	<string name="invalid_login">Invalid login</string>
+	<string name="registration_error">Error registering</string>
+	<string name="save_error">Error saving item</string>
+	<string name="delete_error">Error deleting item</string>
+	<string name="delete_confirmation">Are you sure you want to delete this item?</string>
+	<string name="delete_confirmation_title">Delete Item</string>
+	<string name="empty_list">No inventory found. Try adding a new item.</string>
+	<string name="sms_notification_dialog_title">Permission needed</string>
+	<string name="sms_notification_justification">Receive SMS notifications when inventory items are running low</string>
+</resources>
