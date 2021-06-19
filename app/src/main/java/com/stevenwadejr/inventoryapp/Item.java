@@ -7,15 +7,31 @@ public class Item implements Serializable {
 	private String mName;
 	private int mQuantity;
 
+	/**
+	 * Default constructor
+	 */
 	public Item() {
 	}
 
+	/**
+	 * Constructor that takes an ID and a name - defaulting quantity to 0
+	 *
+	 * @param id   The ID of the item
+	 * @param name The name of the item
+	 */
 	public Item(long id, String name) {
 		mId = id;
 		mName = name;
 		mQuantity = 0;
 	}
 
+	/**
+	 * Constructor that takes id, name, and quantity
+	 *
+	 * @param id       The ID of the item
+	 * @param name     The name of the item
+	 * @param quantity The quantity of the item
+	 */
 	public Item(long id, String name, int quantity) {
 		mId = id;
 		mName = name;
@@ -42,12 +58,25 @@ public class Item implements Serializable {
 		return mQuantity;
 	}
 
-	public void setQuantity(int mQuantity) {
-		this.mQuantity = Math.max(0, mQuantity);
+	/**
+	 * Set the quantity, preventing a negative number
+	 *
+	 * @param quantity The desiired quantity to set
+	 */
+	public void setQuantity(int quantity) {
+		this.mQuantity = Math.max(0, quantity);
 	}
 
-	public void incrementQuantity() { this.mQuantity++; }
+	/**
+	 * Increase the item's quantity by one
+	 */
+	public void incrementQuantity() {
+		this.mQuantity++;
+	}
 
+	/**
+	 * Decrease the item's quantity by one, stopping at zero
+	 */
 	public void decrementQuantity() {
 		this.mQuantity = Math.max(0, this.mQuantity - 1);
 	}
