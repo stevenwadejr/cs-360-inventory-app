@@ -193,6 +193,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
 					mItem.setQuantity(getItemQuantity());
 					boolean updated = inventoryDatabase.updateItem(mItem);
 					Log.d(TAG, "Item quantity updated: " + updated);
+
 				}
 
 				@Override
@@ -219,7 +220,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemHolder> {
 		 * @return Item's quantity
 		 */
 		private int getItemQuantity() {
-			String rawValue = mQuantityView.getText().toString().trim();
+			String rawValue = mQuantityView.getText().toString().replaceAll("[^\\d.]", "").trim();
 			int quantity = rawValue.isEmpty() ? 0 : Integer.parseInt(rawValue);
 
 			// Quantity cannot be less than 0

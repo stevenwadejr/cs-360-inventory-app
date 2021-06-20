@@ -182,7 +182,7 @@ public class EditItemActivity extends AppCompatActivity {
 	 * @return The item's quantity
 	 */
 	private int getItemQuantity() {
-		String rawValue = itemQuantity.getText().toString().trim();
+		String rawValue = itemQuantity.getText().toString().replaceAll("[^\\d.]", "").trim();
 		int quantity = rawValue.isEmpty() ? 0 : Integer.parseInt(rawValue);
 
 		// Quantity cannot be less than 0
